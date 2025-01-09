@@ -96,23 +96,32 @@
 
         /* Photo Gallery */
         #gallery {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            padding: 50px 20px;
+            overflow: hidden;
+            width: 100%;
+            padding: 50px 0;
             background: #fff5ee;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
         }
-        #gallery h2 {
-            color: #d2691e;
-            font-size: 2.5em;
+        .gallery-container {
+            display: flex;
+            width: calc(100% * 3);
+            animation: scrollGallery 15s linear infinite;
         }
-        #gallery img {
-            max-width: 100%;
+        .gallery-container img {
+            width: calc(100% / 3);
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes scrollGallery {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
         }
 
         /* Footer */
@@ -183,11 +192,13 @@ With a congregation of approximately 200 members, our church is a place where fa
         </ul>
     </section>
     <section id="gallery" class="container">
-    <h2>Photo Gallery</h2>
-    <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church.jpg" alt="Church Image 1">
-    <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church2.jpg" alt="Church Image 2">
-    <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church3.jpg" alt="Church Image 3">
-</section>
+        <h2>Photo Gallery</h2>
+        <div class="gallery-container">
+            <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church.jpg" alt="Church Image 1">
+            <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church2.jpg" alt="Church Image 2">
+            <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church3.jpg" alt="Church Image 3">
+        </div>
+    </section>
 
     <section id="contact" class="container">
         <h2 id="contact-title">Contact Us</h2>
