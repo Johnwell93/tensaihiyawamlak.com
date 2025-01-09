@@ -19,7 +19,7 @@
 
         /* Header Section */
         header {
-            background: linear-gradient(135deg, #1e90ff, #00bfff);
+            background: linear-gradient(135deg, #ff7f50, #ff4500);
             color: #fff;
             padding: 40px 0;
             text-align: center;
@@ -43,7 +43,7 @@
 
         /* Navigation Bar */
         nav {
-            background: #0073e6;
+            background: #ff6347;
             color: #fff;
             display: flex;
             justify-content: center;
@@ -94,6 +94,27 @@
             margin-bottom: 20px;
         }
 
+        /* Photo Gallery */
+        #gallery {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            padding: 50px 20px;
+            background: #fff5ee;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        #gallery h2 {
+            color: #d2691e;
+            font-size: 2.5em;
+        }
+        #gallery img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
         /* Footer */
         footer {
             background: #005bb5;
@@ -139,6 +160,7 @@
     <nav>
         <a href="#about" id="nav-about">About</a>
         <a href="#services" id="nav-services">Services</a>
+        <a href="#gallery" id="nav-gallery">Photo Gallery</a>
         <a href="#contact" id="nav-contact">Contact</a>
         <select id="languageSelector" onchange="changeLanguage()">
             <option value="en">English</option>
@@ -157,6 +179,12 @@
             <li><strong>Bible Study:</strong> Every Thursday, 18:00 - 21:00</li>
             <li><strong>Night Prayer:</strong> Every Friday, 22:00 - 05:00</li>
         </ul>
+    </section>
+    <section id="gallery" class="container">
+        <h2>Photo Gallery</h2>
+        <img src="/mnt/data/church.jpg" alt="Church Image 1">
+        <img src="/mnt/data/church2.jpg" alt="Church Image 2">
+        <img src="/mnt/data/church3.jpg" alt="Church Image 3">
     </section>
     <section id="contact" class="container">
         <h2 id="contact-title">Contact Us</h2>
@@ -180,6 +208,7 @@
                 headerDescription: "Bringing Faith and Community Together in Zürich, Switzerland",
                 navAbout: "About",
                 navServices: "Services",
+                navGallery: "Photo Gallery",
                 navContact: "Contact",
                 aboutTitle: "About Us",
                 aboutContent: "Mahber Tensai Hiyaw Amlak is a vibrant and welcoming church community based in the heart of Zürich, Switzerland. We are dedicated to nurturing spiritual growth and fostering a sense of togetherness among our members.",
@@ -191,6 +220,7 @@
                 headerDescription: "Glaube und Gemeinschaft zusammenbringen in Zürich, Schweiz",
                 navAbout: "Über uns",
                 navServices: "Dienstleistungen",
+                navGallery: "Fotogalerie",
                 navContact: "Kontakt",
                 aboutTitle: "Über uns",
                 aboutContent: "Mahber Tensai Hiyaw Amlak ist eine lebendige und einladende Kirchengemeinschaft im Herzen von Zürich, Schweiz. Wir widmen uns der spirituellen Entwicklung und dem Gemeinschaftsgefühl unter unseren Mitgliedern.",
@@ -207,6 +237,7 @@
             document.getElementById('header-description').textContent = lang.headerDescription;
             document.getElementById('nav-about').textContent = lang.navAbout;
             document.getElementById('nav-services').textContent = lang.navServices;
+            document.getElementById('nav-gallery').textContent = lang.navGallery;
             document.getElementById('nav-contact').textContent = lang.navContact;
             document.getElementById('about-title').textContent = lang.aboutTitle;
             document.getElementById('about-content').textContent = lang.aboutContent;
