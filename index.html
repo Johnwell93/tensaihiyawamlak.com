@@ -19,25 +19,25 @@
 
         /* Header Section */
         header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             background-color: #B5E2FA;
             color: #fff;
+            padding: 20px 40px;
             text-align: center;
-            padding: 40px 0;
         }
         header img {
-            width: 200px;
+            width: 150px;
             height: auto;
+            margin-right: 20px;
         }
         header h1 {
-            margin: 20px 0 10px;
+            flex-grow: 1;
+            margin: 0;
             font-size: 2.5em;
             font-weight: 700;
-            letter-spacing: 2px;
-            color: #005bb5;
-        }
-        header p {
-            font-size: 1.4em;
-            margin: 0;
+            text-align: center;
         }
 
         /* Navigation Bar */
@@ -82,40 +82,30 @@
             border-radius: 8px;
             background: #ffffff;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-        .container {
             max-width: 900px;
-            margin: 0 auto;
         }
         h2 {
             color: #005bb5;
             font-size: 2.5em;
             margin-bottom: 20px;
+            text-align: center;
         }
 
-        /* Worship  */
-        #gallery {
+        /* Worship Section */
+        #worship {
             display: flex;
+            flex-direction: row;
+            justify-content: center;
             gap: 20px;
-            padding: 20px 0;
+            padding: 50px 20px;
             background: #ffffff;
             overflow: hidden;
-            position: relative;
         }
-        #gallery div {
-            display: flex;
-            animation: scrollGallery 15s linear infinite;
-        }
-        #gallery img {
+        #worship img {
             max-width: 200px;
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        @keyframes scrollGallery {
-            0% { transform: translateX(100%); }
-            100% { transform: translateX(-100%); }
         }
 
         /* Footer */
@@ -150,7 +140,7 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
         .back-to-top:hover {
-            background: #
+            background: #005bb5;
         }
     </style>
 </head>
@@ -162,20 +152,18 @@
     <nav>
         <a href="#about" id="nav-about">About</a>
         <a href="#services" id="nav-services">Services</a>
-        <a href="#gallery" id="nav-gallery">Worship </a>
+        <a href="#worship" id="nav-worship">Worship</a>
         <a href="#contact" id="nav-contact">Contact</a>
         <select id="languageSelector" onchange="changeLanguage()">
             <option value="en">English</option>
             <option value="de">Deutsch</option>
         </select>
     </nav>
-    <section id="about" class="container">
+    <section id="about">
         <h2 id="about-title">About Us</h2>
-        <p id="about-content">Tensai Hiyaw Amlak is a vibrant and welcoming Eritrean church community located in the heart of Zürich, Switzerland. Rooted in the Holy Trinity and with Jesus Christ as our Lord and Savior, we are dedicated to nurturing spiritual growth, fostering a sense of togetherness among our members, and guiding everyone to focus on Him.
-
-With a congregation of approximately 200 members, our church is a place where faith is deepened, bonds are strengthened, and lives are transformed through prayer, worship, and service. We warmly invite you to join us in our journey of faith as we look to Him for guidance and grace.</p>
+        <p id="about-content">Tensai Hiyaw Amlak is a vibrant and welcoming Eritrean church community located in the heart of Zürich, Switzerland. Rooted in the Holy Trinity and with Jesus Christ as our Lord and Savior, we are dedicated to nurturing spiritual growth, fostering a sense of togetherness among our members, and guiding everyone to focus on Him.</p>
     </section>
-    <section id="services" class="container">
+    <section id="services">
         <h2 id="services-title">Our Services</h2>
         <ul id="services-list">
             <li><strong>Worship and Word of God:</strong> Every Sunday, 14:00 - 17:00</li>
@@ -184,16 +172,15 @@ With a congregation of approximately 200 members, our church is a place where fa
             <li><strong>Night Prayer:</strong> Every Friday, 22:00 - 05:00</li>
         </ul>
     </section>
-    <section id="gallery" class="container">
-        <h2>Worship </h2>
+    <section id="worship">
+        <h2>Worship</h2>
         <div>
             <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church.jpg" alt="Church Image 1">
             <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church2.jpg" alt="Church Image 2">
             <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church3.jpg" alt="Church Image 3">
         </div>
     </section>
-
-    <section id="contact" class="container">
+    <section id="contact">
         <h2 id="contact-title">Contact Us</h2>
         <p id="contact-address"><strong>Address:</strong> Hirzenbachstrasse 102, 8051 Zürich</p>
         <p id="contact-email"><strong>Email:</strong> <a href="mailto:tha.zurichchurch@gmail.com">tha.zurichchurch@gmail.com</a></p>
@@ -212,25 +199,23 @@ With a congregation of approximately 200 members, our church is a place where fa
         const translations = {
             en: {
                 headerTitle: "Tensai Hiyaw Amlak",
-                headerDescription: "Bringing Faith and Community Together in Zürich, Switzerland",
                 navAbout: "About",
                 navServices: "Services",
-                navGallery: "Worship ",
+                navWorship: "Worship",
                 navContact: "Contact",
                 aboutTitle: "About Us",
-                aboutContent: "Tensai Hiyaw Amlak is a vibrant and welcoming church community based in the heart of Zürich, Switzerland. We are dedicated to nurturing spiritual growth and fostering a sense of togetherness among our members.",
+                aboutContent: "Tensai Hiyaw Amlak is a vibrant and welcoming Eritrean church community located in the heart of Zürich, Switzerland. Rooted in the Holy Trinity and with Jesus Christ as our Lord and Savior, we are dedicated to nurturing spiritual growth, fostering a sense of togetherness among our members, and guiding everyone to focus on Him.",
                 servicesTitle: "Our Services",
                 contactTitle: "Contact Us",
             },
             de: {
                 headerTitle: "Tensai Hiyaw Amlak",
-                headerDescription: "Glaube und Gemeinschaft zusammenbringen in Zürich, Schweiz",
                 navAbout: "Über uns",
                 navServices: "Dienstleistungen",
-                navGallery: "Fotogalerie",
+                navWorship: "Anbetung",
                 navContact: "Kontakt",
                 aboutTitle: "Über uns",
-                aboutContent: "Tensai Hiyaw Amlak ist eine lebendige und einladende Kirchengemeinschaft im Herzen von Zürich, Schweiz. Wir widmen uns der spirituellen Entwicklung und dem Gemeinschaftsgefühl unter unseren Mitgliedern.",
+                aboutContent: "Tensai Hiyaw Amlak ist eine lebendige und einladende eritreische Kirchengemeinschaft im Herzen von Zürich, Schweiz. Wir sind der spirituellen Entwicklung und der Förderung des Gemeinschaftsgefühls unter unseren Mitgliedern verpflichtet.",
                 servicesTitle: "Unsere Dienstleistungen",
                 contactTitle: "Kontaktieren Sie uns",
             }
@@ -241,10 +226,9 @@ With a congregation of approximately 200 members, our church is a place where fa
             const lang = translations[selectedLanguage];
 
             document.getElementById('header-title').textContent = lang.headerTitle;
-            document.getElementById('header-description').textContent = lang.headerDescription;
             document.getElementById('nav-about').textContent = lang.navAbout;
             document.getElementById('nav-services').textContent = lang.navServices;
-            document.getElementById('nav-gallery').textContent = lang.navGallery;
+            document.getElementById('nav-worship').textContent = lang.navWorship;
             document.getElementById('nav-contact').textContent = lang.navContact;
             document.getElementById('about-title').textContent = lang.aboutTitle;
             document.getElementById('about-content').textContent = lang.aboutContent;
