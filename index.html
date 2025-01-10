@@ -19,52 +19,50 @@
 
         /* Header Section */
         header {
-            background: linear-gradient(135deg, #ff7f50, #ff4500);
+            background-color: #B5E2FA; /* Updated background color */
             color: #fff;
-            padding: 40px 0;
-            text-align: center;
+            padding: 20px 0;
         }
-        header img {
-            width: 180px;
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            width: 200px; /* Adjusted width for a larger logo */
             height: auto;
-            display: block;
-            margin: 0 auto 20px;
         }
-        header h1 {
-            margin: 10px 0;
-            font-size: 3em;
+        .logo h1 {
+            margin-left: 15px;
+            font-size: 2em;
             font-weight: 700;
             letter-spacing: 2px;
-        }
-        header p {
-            font-size: 1.4em;
-            margin: 0;
+            color: #333;
         }
 
         /* Navigation Bar */
         nav {
-            background: #ff6347;
-            color: #fff;
             display: flex;
-            justify-content: center;
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            align-items: center;
         }
         nav a {
-            color: #fff;
-            margin: 0 20px;
+            color: #333;
+            margin: 0 15px;
             text-decoration: none;
             font-size: 1.1em;
             font-weight: 600;
             transition: color 0.3s;
         }
         nav a:hover {
-            color: #ffdd57;
+            color: #0073e6;
         }
-
         nav select {
             margin-left: 20px;
             padding: 5px;
@@ -81,12 +79,9 @@
             padding: 50px 20px;
             margin: 20px auto;
             border-radius: 8px;
-            background: linear-gradient(to bottom, #ffffff, #e6f7ff);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-        .container {
+            background: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
             max-width: 900px;
-            margin: 0 auto;
         }
         h2 {
             color: #005bb5;
@@ -96,37 +91,27 @@
 
         /* Photo Gallery */
         #gallery {
-            overflow: hidden;
-            width: 100%;
-            padding: 50px 0;
-            background: #fff5ee;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            position: relative;
-        }
-        .gallery-container {
             display: flex;
-            width: calc(100% * 3);
-            animation: scrollGallery 15s linear infinite;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 50px 20px;
+            background: #f9f9f9;
         }
-        .gallery-container img {
-            width: calc(100% / 3);
+        #gallery img {
+            max-width: 100%;
             height: auto;
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
         }
-
-        @keyframes scrollGallery {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
+        #gallery img:hover {
+            transform: scale(1.05);
         }
 
         /* Footer */
         footer {
-            background: #005bb5;
+            background: #333;
             color: #fff;
             text-align: center;
             padding: 30px 0;
@@ -134,7 +119,7 @@
             font-size: 1em;
         }
         footer a {
-            color: #ffdd57;
+            color: #B5E2FA;
             text-decoration: none;
             margin: 0 10px;
         }
@@ -162,102 +147,31 @@
 </head>
 <body>
     <header>
-        <img src="image.png" alt="Mahber Tensai Hiyaw Amlak Logo">
-        <h1 id="header-title">Mahber Tensai Hiyaw Amlak</h1>
-        <p id="header-description">Bringing Faith and Community Together in Zürich, Switzerland</p>
-    </header>
-    <nav>
-        <a href="#about" id="nav-about">About</a>
-        <a href="#services" id="nav-services">Services</a>
-        <a href="#gallery" id="nav-gallery">Photo Gallery</a>
-        <a href="#contact" id="nav-contact">Contact</a>
-        <select id="languageSelector" onchange="changeLanguage()">
-            <option value="en">English</option>
-            <option value="de">Deutsch</option>
-        </select>
-    </nav>
-    <section id="about" class="container">
-        <h2 id="about-title">About Us</h2>
-        <p id="about-content">Mahber Tensai Hiyaw Amlak is a vibrant and welcoming Eritrean church community located in the heart of Zürich, Switzerland. Rooted in the Holy Trinity and with Jesus Christ as our Lord and Savior, we are dedicated to nurturing spiritual growth, fostering a sense of togetherness among our members, and guiding everyone to focus on Him.
-
-With a congregation of approximately 200 members, our church is a place where faith is deepened, bonds are strengthened, and lives are transformed through prayer, worship, and service. We warmly invite you to join us in our journey of faith as we look to Him for guidance and grace.</p>
-    </section>
-    <section id="services" class="container">
-        <h2 id="services-title">Our Services</h2>
-        <ul id="services-list">
-            <li><strong>Worship and Word of God:</strong> Every Sunday, 14:00 - 17:00</li>
-            <li><strong>Prayer Time:</strong> Every Wednesday, 17:30 - 19:00</li>
-            <li><strong>Bible Study:</strong> Every Thursday, 18:00 - 21:00</li>
-            <li><strong>Night Prayer:</strong> Every Friday, 22:00 - 05:00</li>
-        </ul>
-    </section>
-    <section id="gallery" class="container">
-        <h2>Photo Gallery</h2>
-        <div class="gallery-container">
-            <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church.jpg" alt="Church Image 1">
-            <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church2.jpg" alt="Church Image 2">
-            <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church3.jpg" alt="Church Image 3">
+        <div class="header-container">
+            <div class="logo">
+                <img src="image.png" alt="Mahber Tensai Hiyaw Amlak Logo">
+                <h1>Mahber Tensai Hiyaw Amlak</h1>
+            </div>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#gallery">Photo Gallery</a>
+                <a href="#contact">Contact</a>
+                <select id="languageSelector" onchange="changeLanguage()">
+                    <option value="en">English</option>
+                    <option value="de">Deutsch</option>
+                </select>
+            </nav>
         </div>
+    </header>
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Mahber Tensai Hiyaw Amlak is a vibrant and welcoming Eritrean church community located in the heart of Zürich, Switzerland. Rooted in the Holy Trinity and with Jesus Christ as our Lord and Savior, we are dedicated to nurturing spiritual growth, fostering a sense of togetherness among our members, and guiding everyone to focus on Him.</p>
+        <p>With a congregation of approximately 200 members, our church is a place where faith is deepened, bonds are strengthened, and lives are transformed through prayer, worship, and service. We warmly invite you to join us in our journey of faith as we look to Him for guidance and grace.</p>
     </section>
-
-    <section id="contact" class="container">
-        <h2 id="contact-title">Contact Us</h2>
-        <p id="contact-address"><strong>Address:</strong> Hirzenbachstrasse 102, 8051 Zürich</p>
-        <p id="contact-email"><strong>Email:</strong> <a href="mailto:tha.zurichchurch@gmail.com">tha.zurichchurch@gmail.com</a></p>
-        <p id="contact-phone"><strong>Phone:</strong> +41 76 683 5526 (Biniam)</p>
-    </section>
-    <footer>
-        <p>&copy; 2025 Mahber Tensai Hiyaw Amlak | Zürich, Switzerland.</p>
-        <p>
-            <a href="https://www.facebook.com/nehemia.gebre/about_contact_and_basic_info" target="_blank">Facebook</a> |
-            <a href="https://www.youtube.com/@MahberTensaiHeyawAmlakZurich" target="_blank">YouTube</a> |
-            <a href="https://www.instagram.com/mtha.church_zurich/" target="_blank">Instagram</a>
-        </p>
-    </footer>
-    <a href="#top" class="back-to-top">Back to Top</a>
-    <script>
-        const translations = {
-            en: {
-                headerTitle: "Mahber Tensai Hiyaw Amlak",
-                headerDescription: "Bringing Faith and Community Together in Zürich, Switzerland",
-                navAbout: "About",
-                navServices: "Services",
-                navGallery: "Photo Gallery",
-                navContact: "Contact",
-                aboutTitle: "About Us",
-                aboutContent: "Mahber Tensai Hiyaw Amlak is a vibrant and welcoming church community based in the heart of Zürich, Switzerland. We are dedicated to nurturing spiritual growth and fostering a sense of togetherness among our members.",
-                servicesTitle: "Our Services",
-                contactTitle: "Contact Us",
-            },
-            de: {
-                headerTitle: "Mahber Tensai Hiyaw Amlak",
-                headerDescription: "Glaube und Gemeinschaft zusammenbringen in Zürich, Schweiz",
-                navAbout: "Über uns",
-                navServices: "Dienstleistungen",
-                navGallery: "Fotogalerie",
-                navContact: "Kontakt",
-                aboutTitle: "Über uns",
-                aboutContent: "Mahber Tensai Hiyaw Amlak ist eine lebendige und einladende Kirchengemeinschaft im Herzen von Zürich, Schweiz. Wir widmen uns der spirituellen Entwicklung und dem Gemeinschaftsgefühl unter unseren Mitgliedern.",
-                servicesTitle: "Unsere Dienstleistungen",
-                contactTitle: "Kontaktieren Sie uns",
-            }
-        };
-
-        function changeLanguage() {
-            const selectedLanguage = document.getElementById('languageSelector').value;
-            const lang = translations[selectedLanguage];
-
-            document.getElementById('header-title').textContent = lang.headerTitle;
-            document.getElementById('header-description').textContent = lang.headerDescription;
-            document.getElementById('nav-about').textContent = lang.navAbout;
-            document.getElementById('nav-services').textContent = lang.navServices;
-            document.getElementById('nav-gallery').textContent = lang.navGallery;
-            document.getElementById('nav-contact').textContent = lang.navContact;
-            document.getElementById('about-title').textContent = lang.aboutTitle;
-            document.getElementById('about-content').textContent = lang.aboutContent;
-            document.getElementById('services-title').textContent = lang.servicesTitle;
-            document.getElementById('contact-title').textContent = lang.contactTitle;
-        }
-    </script>
-</body>
-</html>
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li><strong>Worship and Word of God:</strong> Every Sunday, 14:00 - 17:00</
+::contentReference[oaicite:0]{index=0}
+ 
