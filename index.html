@@ -21,23 +21,23 @@
         header {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             background-color: #B5E2FA;
             color: #fff;
             padding: 20px 40px;
             text-align: center;
         }
         header img {
-            width: 150px;
+            width: 120px;
             height: auto;
             margin-right: 20px;
         }
         header h1 {
-            flex-grow: 1;
             margin: 0;
-            font-size: 2.5em;
+            font-size: 1.8em;
             font-weight: bold;
             text-align: center;
+            flex-grow: 1;
         }
 
         /* Navigation Bar */
@@ -112,6 +112,9 @@
             .menu-toggle {
                 display: flex;
             }
+            header h1 {
+                font-size: 1.5em; /* Smaller title for mobile */
+            }
         }
 
         /* Section Styling */
@@ -121,7 +124,8 @@
             border-radius: 8px;
             background: #ffffff;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            max-width: 900px;
+            max-width: 1200px; /* Increased max width */
+            width: 90%; /* Ensure it's responsive */
         }
         h2 {
             color: #005bb5;
@@ -147,14 +151,16 @@
             scroll-behavior: smooth;
         }
         #worship img {
-            max-width: 300px;
+            max-width: 320px;
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.5s ease;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            opacity: 0.8;
         }
         #worship img:hover {
-            transform: scale(1.1);
+            transform: scale(1.1) translateY(-10px); /* Adds a movement effect */
+            opacity: 1; /* Make image fully visible */
         }
 
         /* Footer */
@@ -195,6 +201,22 @@
         /* Smooth Scrolling */
         html {
             scroll-behavior: smooth;
+        }
+
+        /* Animation for Image Hover */
+        @keyframes slideIn {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        #worship img {
+            animation: slideIn 1s ease-out forwards;
         }
     </style>
 </head>
