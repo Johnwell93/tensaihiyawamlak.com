@@ -7,7 +7,7 @@
     <title>Tensai Hiyaw Amlak</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* General Body Styling */
+        /* General Styling */
         body {
             font-family: 'Poppins', Arial, sans-serif;
             margin: 0;
@@ -17,30 +17,38 @@
             color: #333;
         }
 
+        /* Center Sections for Larger Screens */
+        section {
+            padding: 50px 20px;
+            margin: 20px auto;
+            border-radius: 8px;
+            background: #ffffff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            max-width: 900px;
+        }
+
         /* Header Section */
         header {
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
             background-color: #B5E2FA;
             color: #fff;
             padding: 20px 40px;
-            text-align: center;
         }
         header img {
             width: 120px;
             height: auto;
-            margin-right: 20px;
         }
         header h1 {
+            flex-grow: 1;
             margin: 0;
             font-size: 1.8em;
             font-weight: bold;
             text-align: center;
-            flex-grow: 1;
         }
 
-        /* Navigation Bar */
+        /* Navigation */
         nav {
             background: #005bb5;
             color: #fff;
@@ -51,24 +59,22 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
         nav a {
             color: #fff;
             margin: 0 10px;
             text-decoration: none;
-            font-size: 1.1em;
+            font-size: 1em;
             font-weight: 600;
             transition: color 0.3s;
         }
         nav a:hover {
             color: #ffdd57;
         }
-
         nav select {
             margin-left: auto;
             padding: 5px;
-            font-size: 1.1em;
+            font-size: 1em;
             border: none;
             background: #fff;
             color: #333;
@@ -91,11 +97,9 @@
             margin: 4px 0;
             transition: all 0.3s ease;
         }
-
         .menu {
             display: flex;
         }
-
         @media (max-width: 768px) {
             .menu {
                 display: none;
@@ -112,55 +116,35 @@
             .menu-toggle {
                 display: flex;
             }
-            header h1 {
-                font-size: 1.5em; /* Smaller title for mobile */
-            }
         }
 
-        /* Section Styling */
-        section {
-            padding: 50px 20px;
-            margin: 20px auto;
-            border-radius: 8px;
-            background: #ffffff;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            max-width: 1200px; /* Increased max width */
-            width: 90%; /* Ensure it's responsive */
-        }
+        /* Section Headings */
         h2 {
             color: #005bb5;
-            font-size: 2.5em;
+            font-size: 2em;
             margin-bottom: 20px;
             text-align: center;
             font-weight: bold;
         }
 
         /* Worship Section */
-        #worship {
-            padding: 50px 20px;
-            background: #ffffff;
-            overflow: hidden;
-        }
-        #worship h2 {
-            margin-bottom: 20px;
-        }
         #worship .worship-gallery {
             display: flex;
+            justify-content: center;
             gap: 20px;
             overflow-x: auto;
             scroll-behavior: smooth;
         }
         #worship img {
-            max-width: 320px;
+            max-width: 300px;
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.5s ease, opacity 0.5s ease;
-            opacity: 0.8;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
         }
         #worship img:hover {
-            transform: scale(1.1) translateY(-10px); /* Adds a movement effect */
-            opacity: 1; /* Make image fully visible */
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         }
 
         /* Footer */
@@ -169,7 +153,6 @@
             color: #fff;
             text-align: center;
             padding: 30px 0;
-            margin-top: 40px;
             font-size: 1em;
         }
         footer a {
@@ -196,27 +179,6 @@
         }
         .back-to-top:hover {
             background: #005bb5;
-        }
-
-        /* Smooth Scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Animation for Image Hover */
-        @keyframes slideIn {
-            0% {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        #worship img {
-            animation: slideIn 1s ease-out forwards;
         }
     </style>
 </head>
@@ -278,7 +240,6 @@
             <strong>Phone:</strong> +41 76 683 5526 (Biniam)
         </p>
     </section>
-
     <footer>
         <p>&copy; 2025 Mahber Tensai Hiyaw Amlak | Zürich, Switzerland.</p>
         <p>
@@ -288,7 +249,6 @@
         </p>
     </footer>
     <a href="#top" class="back-to-top">Back to Top</a>
-
     <script>
         function toggleMenu() {
             const menu = document.querySelector('.menu');
