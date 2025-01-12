@@ -13,45 +13,38 @@
             margin: 0;
             padding: 0;
             line-height: 1.8;
-            background-color: #F9FAFB;
+            background-color: #F0F8FF;
             color: #333;
             overflow-x: hidden;
         }
 
-        /* Header Section */
-        header {
-            background: url('https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church.jpg') no-repeat center center/cover;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
-            position: relative;
-        }
-        header .overlay {
-            position: absolute;
+        /* Welcome Section */
+        #welcome {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1;
+            background: url('https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            z-index: 10000;
+            color: white;
+            text-align: center;
         }
-        header h1 {
+        #welcome h1 {
             font-size: 3em;
-            font-weight: bold;
             margin: 0;
-            z-index: 2;
+            font-weight: bold;
         }
-        header p {
+        #welcome p {
             font-size: 1.5em;
             margin: 10px 0;
-            z-index: 2;
         }
-        header .btn {
-            background-color: #FF4A57;
+        #welcome .btn {
+            background-color: #0073e6;
             color: #fff;
             padding: 15px 30px;
             border-radius: 25px;
@@ -59,54 +52,33 @@
             font-size: 1.2em;
             font-weight: bold;
             transition: background-color 0.3s, transform 0.3s;
-            z-index: 2;
+            display: inline-block;
+            margin-top: 20px;
         }
-        header .btn:hover {
-            background-color: #E63E4D;
+        #welcome .btn:hover {
+            background-color: #005bb5;
             transform: scale(1.05);
         }
 
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
-        nav ul {
-            display: flex;
-            justify-content: center;
-            margin: 0;
-            padding: 10px 0;
-            list-style: none;
-        }
-        nav ul li {
-            margin: 0 15px;
-        }
-        nav ul li a {
-            color: #333;
-            text-decoration: none;
-            font-size: 1.1em;
-            font-weight: 600;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover {
-            color: #FF4A57;
+        /* Hide Welcome Section */
+        #welcome.hidden {
+            display: none;
         }
 
-        /* Sections */
+        /* Center Sections for Larger Screens */
         section {
             padding: 50px 20px;
             margin: 20px auto;
             border-radius: 8px;
             background: #ffffff;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            max-width: 1200px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            max-width: 900px;
             text-align: center;
+            transform: translateY(50px);
+            opacity: 0;
             animation: fadeInUp 1s ease forwards;
         }
+
         @keyframes fadeInUp {
             0% {
                 transform: translateY(50px);
@@ -118,118 +90,254 @@
             }
         }
 
-        h2 {
-            color: #333;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            font-weight: bold;
+        /* Header Section */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #005bb5;
+            color: #fff;
+            padding: 20px 40px;
         }
-        p {
-            font-size: 1.2em;
-            color: #666;
-            line-height: 1.8;
+        header img {
+            width: 120px;
+            height: auto;
+            margin-right: 20px;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: bold;
+            text-align: center;
         }
 
-        /* Cards Section */
-        .card {
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            margin: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* Navigation */
+        nav {
+            background: #005bb5;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        nav a {
+            color: #fff;
+            margin: 0 20px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: 600;
+            transition: color 0.3s;
         }
-        .card img {
-            width: 100%;
-            height: auto;
+        nav a:hover {
+            color: #ffdd57;
         }
-        .card-content {
-            padding: 20px;
-        }
-        .card-content h3 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-            color: #333;
-        }
-        .card-content p {
+        nav select {
+            margin-left: auto;
+            padding: 5px;
             font-size: 1em;
-            color: #666;
+            border: none;
+            background: #fff;
+            color: #333;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Mobile Navigation */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .menu-toggle div {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            margin: 4px 0;
+            transition: all 0.3s ease;
+        }
+        .menu {
+            display: flex;
+        }
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                background: #005bb5;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
+            }
+            .menu.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: flex;
+            }
+        }
+
+        /* Section Headings */
+        h2 {
+            color: #005bb5;
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Worship Section */
+        #worship .worship-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }
+        #worship img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            animation: fadeIn 1.5s ease forwards;
+        }
+        #worship img:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Button Styling */
+        .btn {
+            background-color: #0073e6;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+            display: inline-block;
+        }
+        .btn:hover {
+            background-color: #005bb5;
+            transform: scale(1.05);
         }
 
         /* Footer */
         footer {
-            background: #333;
+            background: #005bb5;
             color: #fff;
             text-align: center;
             padding: 30px 0;
             font-size: 1em;
         }
         footer a {
-            color: #FF4A57;
+            color: #ffdd57;
             text-decoration: none;
             margin: 0 10px;
         }
         footer a:hover {
             text-decoration: underline;
         }
+
+        /* Back-to-Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #0073e6;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 50px;
+            text-decoration: none;
+            display: none;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .back-to-top:hover {
+            background: #005bb5;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <div class="overlay"></div>
+    <div id="welcome">
         <h1>Welcome to Tensai Hiyaw Amlak</h1>
         <p>Your spiritual home in Zürich, Switzerland.</p>
-        <a href="#about" class="btn">Explore More</a>
+        <a href="#about" class="btn" onclick="hideWelcome()">Enter</a>
+    </div>
+
+    <header>
+        <img src="Image.png" alt="Mahber Tensai Hiyaw Amlak Logo">
+        <h1 id="header-title">Tensai Hiyaw Amlak</h1>
     </header>
-
     <nav>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#worship">Worship</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="menu">
+            <a href="#about" id="nav-about">About</a>
+            <a href="#services" id="nav-services">Services</a>
+            <a href="#worship" id="nav-worship">Worship</a>
+            <a href="#contact" id="nav-contact">Contact</a>
+        </div>
+        <select id="languageSelector" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="de">Deutsch</option>
+        </select>
     </nav>
-
     <section id="about">
-        <h2>About Us</h2>
-        <p>Tensai Hiyaw Amlak is a vibrant and welcoming Eritrean church community located in the heart of Zürich, Switzerland. Rooted in the Holy Trinity and with Jesus Christ as our Lord and Savior, we are dedicated to nurturing spiritual growth, fostering a sense of togetherness among our members, and guiding everyone to focus on Him.</p>
+        <h2 id="about-title">About Us</h2>
+        <p id="about-content">Tensai Hiyaw Amlak is a vibrant and welcoming Eritrean church community located in the heart of Zürich, Switzerland. Rooted in the Holy Trinity and with Jesus Christ as our Lord and Savior, we are dedicated to nurturing spiritual growth, fostering a sense of togetherness among our members, and guiding everyone to focus on Him.</p>
+        <a href="#contact" class="btn">Join Us</a>
     </section>
-
     <section id="services">
-        <h2>Our Services</h2>
-        <div class="card">
-            <img src="https://via.placeholder.com/300" alt="Worship Service">
-            <div class="card-content">
-                <h3>Worship and Word of God</h3>
-                <p>Every Sunday, 14:00 - 17:00</p>
-            </div>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/300" alt="Prayer Time">
-            <div class="card-content">
-                <h3>Prayer Time</h3>
-                <p>Every Wednesday, 17:30 - 19:00</p>
-            </div>
-        </div>
+        <h2 id="services-title">Our Services</h2>
+        <ul id="services-list">
+            <li><strong>Worship and Word of God:</strong> Every Sunday, 14:00 - 17:00</li>
+            <li><strong>Prayer Time:</strong> Every Wednesday, 17:30 - 19:00</li>
+            <li><strong>Bible Study:</strong> Every Thursday, 18:00 - 21:00</li>
+            <li><strong>Night Prayer:</strong> Every Friday, 22:00 - 05:00</li>
+        </ul>
     </section>
-
     <section id="worship">
         <h2>Worship</h2>
-        <p>Join us in worship to experience the divine presence and connect with God through song, prayer, and scripture.</p>
+        <p>Join us in worship to experience the divine presence and connect with God through song, prayer, and scripture. Everyone is welcome to join our vibrant worship sessions and feel the spiritual energy of our community.</p>
+        <div class="worship-gallery">
+            <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church.jpg" alt="Church Image 1">
+            <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church2.jpg" alt="Church Image 2">
+            <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church3.jpg" alt="Church Image 3">
+        </div>
     </section>
-
     <section id="contact">
-        <h2>Contact Us</h2>
-        <p><strong>Address:</strong> Hirzenbachstrasse 102, 8051 Zürich</p>
-        <p><strong>Email:</strong> <a href="mailto:tsehaye.amanuel@gmx.ch">tsehaye.amanuel@gmx.ch</a></p>
-        <p><strong>Phone:</strong> +41 76 683 5526 (Biniam)</p>
+        <h2 id="contact-title">Contact Us</h2>
+        <p id="contact-address">
+            <img src="address-icon.png" alt="Address Icon" style="width: 20px; vertical-align: middle; margin-right: 10px;">
+            <strong>Address:</strong> Hirzenbachstrasse 102, 8051 Zürich
+        </p>
+        <p id="contact-email">
+            <img src="email-icon.png" alt="Email Icon" style="width: 20px; vertical-align: middle; margin-right: 10px;">
+            <strong>Email:</strong> <a href="mailto:tsehaye.amanuel@gmx.ch">tsehaye.amanuel@gmx.ch</a>
+        </p>
+        <p id="contact-phone">
+            <img src="phone-icon.png" alt="Phone Icon" style="width: 20px; vertical-align: middle; margin-right: 10px;">
+            <strong>Phone:</strong> +41 76 683 5526 (Biniam)
+        </p>
     </section>
-
     <footer>
         <p>&copy; 2025 Mahber Tensai Hiyaw Amlak | Zürich, Switzerland.</p>
         <p>
@@ -238,5 +346,56 @@
             <a href="https://www.instagram.com/mtha.church_zurich/" target="_blank">Instagram</a>
         </p>
     </footer>
+    <a href="#top" class="back-to-top">Back to Top</a>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+
+        const translations = {
+            en: {
+                headerTitle: "Tensai Hiyaw Amlak",
+                navAbout: "About",
+                navServices: "Services",
+                navWorship: "Worship",
+                navContact: "Contact",
+                aboutTitle: "About Us",
+                aboutContent: "Tensai Hiyaw Amlak is a vibrant and welcoming Eritrean church community located in the heart of Zürich, Switzerland. Rooted in the Holy Trinity and with Jesus Christ as our Lord and Savior, we are dedicated to nurturing spiritual growth, fostering a sense of togetherness among our members, and guiding everyone to focus on Him.",
+                servicesTitle: "Our Services",
+                contactTitle: "Contact Us",
+            },
+            de: {
+                headerTitle: "Tensai Hiyaw Amlak",
+                navAbout: "Über uns",
+                navServices: "Dienstleistungen",
+                navWorship: "Anbetung",
+                navContact: "Kontakt",
+                aboutTitle: "Über uns",
+                aboutContent: "Tensai Hiyaw Amlak ist eine lebendige und einladende eritreische Kirchengemeinschaft im Herzen von Zürich, Schweiz. Wir sind der spirituellen Entwicklung und der Förderung des Gemeinschaftsgefühls unter unseren Mitgliedern verpflichtet.",
+                servicesTitle: "Unsere Dienstleistungen",
+                contactTitle: "Kontaktieren Sie uns",
+            }
+        };
+
+        function changeLanguage() {
+            const selectedLanguage = document.getElementById('languageSelector').value;
+            const lang = translations[selectedLanguage];
+
+            document.getElementById('header-title').textContent = lang.headerTitle;
+            document.getElementById('nav-about').textContent = lang.navAbout;
+            document.getElementById('nav-services').textContent = lang.navServices;
+            document.getElementById('nav-worship').textContent = lang.navWorship;
+            document.getElementById('nav-contact').textContent = lang.navContact;
+            document.getElementById('about-title').textContent = lang.aboutTitle;
+            document.getElementById('about-content').textContent = lang.aboutContent;
+            document.getElementById('services-title').textContent = lang.servicesTitle;
+            document.getElementById('contact-title').textContent = lang.contactTitle;
+        }
+
+        function hideWelcome() {
+            document.getElementById('welcome').classList.add('hidden');
+        }
+    </script>
 </body>
 </html>
