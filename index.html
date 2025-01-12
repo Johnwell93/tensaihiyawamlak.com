@@ -77,15 +77,40 @@
         }
 
         /* Mobile Navigation */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .menu-toggle div {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            margin: 4px 0;
+            transition: all 0.3s ease;
+        }
+
+        .menu {
+            display: flex;
+        }
+
         @media (max-width: 768px) {
-            nav {
-                flex-direction: row;
-                justify-content: space-between;
+            .menu {
+                display: none;
+                flex-direction: column;
+                background: #005bb5;
+                width: 100%;
+                position: absolute;
+                top: 60px;
+                left: 0;
             }
-            nav select {
-                margin-left: 0;
-                margin-right: 10px;
-                align-self: flex-end;
+            .menu.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: flex;
             }
         }
 
@@ -108,29 +133,28 @@
 
         /* Worship Section */
         #worship {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
             padding: 50px 20px;
             background: #ffffff;
             overflow: hidden;
         }
+        #worship h2 {
+            margin-bottom: 20px;
+        }
+        #worship .worship-gallery {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }
         #worship img {
-            max-width: 100%;
+            max-width: 300px;
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             transition: transform 0.5s ease;
-            animation: slideIn 5s infinite alternate;
         }
         #worship img:hover {
             transform: scale(1.1);
-        }
-
-        @keyframes slideIn {
-            0% { transform: translateX(-10%); }
-            100% { transform: translateX(10%); }
         }
 
         /* Footer */
@@ -175,10 +199,17 @@
         <h1 id="header-title">Tensai Hiyaw Amlak</h1>
     </header>
     <nav>
-        <a href="#about" id="nav-about">About</a>
-        <a href="#services" id="nav-services">Services</a>
-        <a href="#worship" id="nav-worship">Worship</a>
-        <a href="#contact" id="nav-contact">Contact</a>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="menu">
+            <a href="#about" id="nav-about">About</a>
+            <a href="#services" id="nav-services">Services</a>
+            <a href="#worship" id="nav-worship">Worship</a>
+            <a href="#contact" id="nav-contact">Contact</a>
+        </div>
         <select id="languageSelector" onchange="changeLanguage()">
             <option value="en">English</option>
             <option value="de">Deutsch</option>
@@ -199,7 +230,7 @@
     </section>
     <section id="worship">
         <h2>Worship</h2>
-        <div>
+        <div class="worship-gallery">
             <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church.jpg" alt="Church Image 1">
             <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church2.jpg" alt="Church Image 2">
             <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church3.jpg" alt="Church Image 3">
@@ -231,6 +262,11 @@
     </footer>
     <a href="#top" class="back-to-top">Back to Top</a>
     <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+
         const translations = {
             en: {
                 headerTitle: "Tensai Hiyaw Amlak",
