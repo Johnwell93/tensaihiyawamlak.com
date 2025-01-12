@@ -28,14 +28,14 @@
             text-align: center;
         }
         header img {
-            width: 100px;
+            width: 150px;
             height: auto;
             margin-right: 20px;
         }
         header h1 {
             flex-grow: 1;
             margin: 0;
-            font-size: 1.8em;
+            font-size: 2.5em;
             font-weight: bold;
             text-align: center;
         }
@@ -45,9 +45,9 @@
             background: #005bb5;
             color: #fff;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 10px 0;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -57,7 +57,7 @@
             color: #fff;
             margin: 0 10px;
             text-decoration: none;
-            font-size: 1em;
+            font-size: 1.1em;
             font-weight: 600;
             transition: color 0.3s;
         }
@@ -66,9 +66,9 @@
         }
 
         nav select {
-            margin-left: 20px;
+            margin-left: auto;
             padding: 5px;
-            font-size: 1em;
+            font-size: 1.1em;
             border: none;
             background: #fff;
             color: #333;
@@ -76,19 +76,32 @@
             cursor: pointer;
         }
 
+        /* Mobile Navigation */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            nav select {
+                margin-left: 0;
+                margin-right: 10px;
+                align-self: flex-end;
+            }
+        }
+
         /* Section Styling */
         section {
-            padding: 30px 10px;
-            margin: 10px auto;
+            padding: 50px 20px;
+            margin: 20px auto;
             border-radius: 8px;
             background: #ffffff;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            max-width: 100%;
+            max-width: 900px;
         }
         h2 {
             color: #005bb5;
-            font-size: 2em;
-            margin-bottom: 15px;
+            font-size: 2.5em;
+            margin-bottom: 20px;
             text-align: center;
             font-weight: bold;
         }
@@ -99,7 +112,7 @@
             flex-direction: column;
             align-items: center;
             gap: 20px;
-            padding: 30px 10px;
+            padding: 50px 20px;
             background: #ffffff;
             overflow: hidden;
         }
@@ -109,9 +122,15 @@
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             transition: transform 0.5s ease;
+            animation: slideIn 5s infinite alternate;
         }
         #worship img:hover {
             transform: scale(1.1);
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateX(-10%); }
+            100% { transform: translateX(10%); }
         }
 
         /* Footer */
@@ -119,8 +138,8 @@
             background: #005bb5;
             color: #fff;
             text-align: center;
-            padding: 20px 0;
-            margin-top: 20px;
+            padding: 30px 0;
+            margin-top: 40px;
             font-size: 1em;
         }
         footer a {
@@ -147,24 +166,6 @@
         }
         .back-to-top:hover {
             background: #005bb5;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-            }
-            header img {
-                margin: 0 auto 10px;
-            }
-            nav a {
-                font-size: 0.9em;
-                margin: 0 8px;
-            }
-            section {
-                padding: 20px;
-            }
         }
     </style>
 </head>
@@ -205,20 +206,20 @@
         </div>
     </section>
     <section id="contact">
-        <h2 id="contact-title">Contact Us</h2>
-        <p id="contact-address">
-            <img src="address-icon.png" alt="Address Icon" style="width: 20px; vertical-align: middle; margin-right: 10px;">
-            <strong>Address:</strong> Hirzenbachstrasse 102, 8051 Zürich
-        </p>
-        <p id="contact-email">
-            <img src="email-icon.png" alt="Email Icon" style="width: 20px; vertical-align: middle; margin-right: 10px;">
-            <strong>Email:</strong> <a href="mailto:tsehaye.amanuel@gmx.ch">tsehaye.amanuel@gmx.ch</a>
-        </p>
-        <p id="contact-phone">
-            <img src="phone-icon.png" alt="Phone Icon" style="width: 20px; vertical-align: middle; margin-right: 10px;">
-            <strong>Phone:</strong> +41 76 683 5526 (Biniam)
-        </p>
-    </section>
+    <h2 id="contact-title">Contact Us</h2>
+    <p id="contact-address">
+        <img src="address-icon.png" alt="Address Icon" style="width: 20px; vertical-align: middle; margin-right: 10px;">
+        <strong>Address:</strong> Hirzenbachstrasse 102, 8051 Zürich
+    </p>
+    <p id="contact-email">
+        <img src="email-icon.png" alt="Email Icon" style="width: 20px; vertical-align: middle; margin-right: 10px;">
+        <strong>Email:</strong> <a href="mailto:tsehaye.amanuel@gmx.ch">tsehaye.amanuel@gmx.ch</a>
+    </p>
+    <p id="contact-phone">
+        <img src="phone-icon.png" alt="Phone Icon" style="width: 20px; vertical-align: middle; margin-right: 10px;">
+        <strong>Phone:</strong> +41 76 683 5526 (Biniam)
+    </p>
+</section>
 
     <footer>
         <p>&copy; 2025 Mahber Tensai Hiyaw Amlak | Zürich, Switzerland.</p>
