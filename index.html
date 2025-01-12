@@ -28,14 +28,14 @@
             text-align: center;
         }
         header img {
-            width: 150px;
+            width: 100px;
             height: auto;
             margin-right: 20px;
         }
         header h1 {
             flex-grow: 1;
             margin: 0;
-            font-size: 2.5em;
+            font-size: 1.8em;
             font-weight: bold;
             text-align: center;
         }
@@ -45,8 +45,9 @@
             background: #005bb5;
             color: #fff;
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            padding: 20px 0;
+            padding: 10px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -54,9 +55,9 @@
         }
         nav a {
             color: #fff;
-            margin: 0 20px;
+            margin: 0 10px;
             text-decoration: none;
-            font-size: 1.1em;
+            font-size: 1em;
             font-weight: 600;
             transition: color 0.3s;
         }
@@ -67,7 +68,7 @@
         nav select {
             margin-left: 20px;
             padding: 5px;
-            font-size: 1.1em;
+            font-size: 1em;
             border: none;
             background: #fff;
             color: #333;
@@ -77,17 +78,17 @@
 
         /* Section Styling */
         section {
-            padding: 50px 20px;
-            margin: 20px auto;
+            padding: 30px 10px;
+            margin: 10px auto;
             border-radius: 8px;
             background: #ffffff;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            max-width: 900px;
+            max-width: 100%;
         }
         h2 {
             color: #005bb5;
-            font-size: 2.5em;
-            margin-bottom: 20px;
+            font-size: 2em;
+            margin-bottom: 15px;
             text-align: center;
             font-weight: bold;
         }
@@ -98,12 +99,12 @@
             flex-direction: column;
             align-items: center;
             gap: 20px;
-            padding: 50px 20px;
+            padding: 30px 10px;
             background: #ffffff;
             overflow: hidden;
         }
         #worship img {
-            max-width: 200px;
+            max-width: 100%;
             height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -118,8 +119,8 @@
             background: #005bb5;
             color: #fff;
             text-align: center;
-            padding: 30px 0;
-            margin-top: 40px;
+            padding: 20px 0;
+            margin-top: 20px;
             font-size: 1em;
         }
         footer a {
@@ -146,6 +147,24 @@
         }
         .back-to-top:hover {
             background: #005bb5;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            header img {
+                margin: 0 auto 10px;
+            }
+            nav a {
+                font-size: 0.9em;
+                margin: 0 8px;
+            }
+            section {
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -186,20 +205,20 @@
         </div>
     </section>
     <section id="contact">
-    <h2 id="contact-title">Contact Us</h2>
-    <p id="contact-address">
-        <img src="address-icon.png" alt="Address Icon" style="width: 20px; vertical-align: middle; margin-right: 10px;">
-        <strong>Address:</strong> Hirzenbachstrasse 102, 8051 Zürich
-    </p>
-    <p id="contact-email">
-        <img src="email-icon.png" alt="Email Icon" style="width: 20px; vertical-align: middle; margin-right: 10px;">
-        <strong>Email:</strong> <a href="mailto:tha.zurichchurch@gmail.com">tha.zurichchurch@gmail.com</a>
-    </p>
-    <p id="contact-phone">
-        <img src="phone-icon.png" alt="Phone Icon" style="width: 20px; vertical-align: middle; margin-right: 10px;">
-        <strong>Phone:</strong> +41 76 683 5526 (Biniam)
-    </p>
-</section>
+        <h2 id="contact-title">Contact Us</h2>
+        <p id="contact-address">
+            <img src="address-icon.png" alt="Address Icon" style="width: 20px; vertical-align: middle; margin-right: 10px;">
+            <strong>Address:</strong> Hirzenbachstrasse 102, 8051 Zürich
+        </p>
+        <p id="contact-email">
+            <img src="email-icon.png" alt="Email Icon" style="width: 20px; vertical-align: middle; margin-right: 10px;">
+            <strong>Email:</strong> <a href="mailto:tsehaye.amanuel@gmx.ch">tsehaye.amanuel@gmx.ch</a>
+        </p>
+        <p id="contact-phone">
+            <img src="phone-icon.png" alt="Phone Icon" style="width: 20px; vertical-align: middle; margin-right: 10px;">
+            <strong>Phone:</strong> +41 76 683 5526 (Biniam)
+        </p>
+    </section>
 
     <footer>
         <p>&copy; 2025 Mahber Tensai Hiyaw Amlak | Zürich, Switzerland.</p>
