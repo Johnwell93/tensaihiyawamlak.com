@@ -27,22 +27,22 @@
             padding: 10px 20px;
         }
         header img {
-            width: 100px;
+            width: 80px;
             height: auto;
         }
-        header .header-content {
+        header .header-left {
             display: flex;
             align-items: center;
         }
-        header h1 {
+        header .header-left h1 {
             margin-left: 10px;
-            font-size: 1.5em;
+            font-size: 1.8em;
             font-weight: bold;
         }
         nav {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 30px;
         }
         nav a {
             color: #333;
@@ -55,72 +55,11 @@
             color: #005bb5;
         }
 
-        /* Navigation */
-        nav {
-            background: #005bb5;
-            color: #fff;
-            padding: 10px 20px;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav .menu {
+        /* Center Navigation */
+        .center-nav {
             display: flex;
             justify-content: center;
-            gap: 15px;
-            list-style: none;
-            padding: 0;
-        }
-        nav select {
-            margin-left: auto;
-            padding: 5px;
-            font-size: 1.1em;
-            border: none;
-            background: #fff;
-            color: #333;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        /* Mobile Navigation */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-        }
-        .menu-toggle div {
-            width: 25px;
-            height: 3px;
-            background: #fff;
-            margin: 4px 0;
-            transition: all 0.3s ease;
-        }
-
-        .menu {
-            display: flex;
-        }
-
-        @media (max-width: 768px) {
-            .menu {
-                display: none;
-                flex-direction: column;
-                background: #005bb5;
-                width: 100%;
-                position: absolute;
-                top: 60px;
-                left: 0;
-            }
-            .menu.active {
-                display: flex;
-            }
-            .menu-toggle {
-                display: flex;
-            }
-            header h1 {
-                font-size: 1.2em; /* Smaller title for mobile */
-            }
+            flex: 1;
         }
 
         /* Section Styling */
@@ -146,9 +85,6 @@
             background: #ffffff;
             overflow: hidden;
         }
-        #worship h2 {
-            margin-bottom: 20px;
-        }
         #worship p {
             text-align: center;
             font-size: 1.2em;
@@ -171,12 +107,21 @@
             transform: scale(1.1);
         }
 
+        /* Contact Section */
+        #contact {
+            text-align: center;
+        }
+        #contact p {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
         /* Footer */
         footer {
             background: #005bb5;
             color: #fff;
             text-align: center;
-            padding: 30px 0;
+            padding: 20px 0;
             margin-top: 40px;
             font-size: 1em;
         }
@@ -189,23 +134,6 @@
             text-decoration: underline;
         }
 
-        /* Back-to-Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #0073e6;
-            color: #fff;
-            padding: 10px 15px;
-            border-radius: 50px;
-            text-decoration: none;
-            display: none;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-        .back-to-top:hover {
-            background: #005bb5;
-        }
-
         /* Smooth Scrolling */
         html {
             scroll-behavior: smooth;
@@ -214,30 +142,24 @@
 </head>
 <body>
     <header>
-        <div class="header-content">
+        <div class="header-left">
             <img src="Image.png" alt="Mahber Tensai Hiyaw Amlak Logo">
-            <h1 id="header-title">Tensai Hiyaw Amlak</h1>
+            <h1>Tensai Hiyaw Amlak</h1>
         </div>
-        <nav>
-            <ul class="menu">
-                <li><a href="#about" id="nav-about">About</a></li>
-                <li><a href="#services" id="nav-services">Services</a></li>
-                <li><a href="#worship" id="nav-worship">Worship</a></li>
-                <li><a href="#contact" id="nav-contact">Contact</a></li>
-            </ul>
-            <select id="languageSelector" onchange="changeLanguage()">
-                <option value="en">English</option>
-                <option value="de">Deutsch</option>
-            </select>
+        <nav class="center-nav">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#worship">Worship</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
     <section id="about">
-        <h2 id="about-title">About Us</h2>
-        <p id="about-content">Tensai Hiyaw Amlak is a vibrant and welcoming Eritrean church community located in the heart of Zürich, Switzerland. Rooted in the Holy Trinity and with Jesus Christ as our Lord and Savior, we are dedicated to nurturing spiritual growth, fostering a sense of togetherness among our members, and guiding everyone to focus on Him.</p>
+        <h2>About Us</h2>
+        <p>Tensai Hiyaw Amlak is a vibrant and welcoming Eritrean church community located in the heart of Zürich, Switzerland. Rooted in the Holy Trinity and with Jesus Christ as our Lord and Savior, we are dedicated to nurturing spiritual growth, fostering a sense of togetherness among our members, and guiding everyone to focus on Him.</p>
     </section>
     <section id="services">
-        <h2 id="services-title">Our Services</h2>
-        <ul id="services-list">
+        <h2>Our Services</h2>
+        <ul>
             <li><strong>Worship and Word of God:</strong> Every Sunday, 14:00 - 17:00</li>
             <li><strong>Prayer Time:</strong> Every Wednesday, 17:30 - 19:00</li>
             <li><strong>Bible Study:</strong> Every Thursday, 18:00 - 21:00</li>
@@ -253,8 +175,14 @@
             <img src="church3.jpg" alt="Church Image 3">
         </div>
     </section>
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: info@tensai.org</p>
+        <p>Phone: +41 79 123 4567</p>
+        <p>Address: Bahnhofstrasse 10, 8001 Zürich, Switzerland</p>
+    </section>
     <footer>
-        <p>&copy; 2025 Mahber Tensai Hiyaw Amlak | Zürich, Switzerland.</p>
+        <p>&copy; 2025 Mahber Tensai Hiyaw Amlak | Zürich, Switzerland</p>
     </footer>
 </body>
 </html>
