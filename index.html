@@ -25,6 +25,9 @@
             background-color: #B5E2FA;
             color: #333;
             padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         header img {
             width: 80px;
@@ -39,6 +42,8 @@
             font-size: 1.8em;
             font-weight: bold;
         }
+
+        /* Navigation Styling */
         nav {
             display: flex;
             align-items: center;
@@ -53,6 +58,54 @@
         }
         nav a:hover {
             color: #005bb5;
+        }
+
+        /* Mobile Navigation */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+        .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+        }
+        .mobile-nav {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            background: #B5E2FA;
+            padding: 10px 20px;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+        .mobile-nav a {
+            font-size: 1em;
+            color: #333;
+            font-weight: 600;
+            text-decoration: none;
+        }
+        .mobile-nav a:hover {
+            color: #005bb5;
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            .menu-toggle {
+                display: flex;
+            }
+            .mobile-nav.active {
+                display: flex;
+            }
         }
 
         /* Section Styling */
@@ -77,37 +130,16 @@
             color: #555;
         }
 
-        /* Worship Section */
-        #worship .description {
-            font-size: 1.1em;
-            margin-bottom: 20px;
-            text-align: center;
-            color: #555;
-        }
-        #worship .worship-gallery {
-            display: flex;
-            gap: 20px;
-            overflow-x: auto;
-            scroll-behavior: smooth;
-        }
-        #worship img {
-            max-width: 300px;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.5s ease;
-        }
-        #worship img:hover {
-            transform: scale(1.1);
-        }
-
         /* Footer Section */
         footer {
             background: #005bb5;
-            color: #fff; /* White text for visibility */
+            color: #fff;
             text-align: center;
             padding: 30px 20px;
             margin-top: 40px;
+        }
+        footer p {
+            color: #E6E6E6;
         }
         footer .social-icons {
             margin: 20px 0;
@@ -116,27 +148,26 @@
             gap: 20px;
         }
         footer .social-icons a {
-            color: #fff; /* White color for links */
-            font-size: 1.1em;
+            color: #fff;
             text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s;
+            font-size: 1.2em;
+            transition: color 0.3s, transform 0.3s;
         }
         footer .social-icons a:hover {
             color: #ffdd57;
-        }
-
-        /* Contact Section */
-        .contact-info {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .contact-info img {
-            width: 30px;
-            height: 30px;
+            transform: scale(1.1);
         }
     </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuToggle = document.querySelector(".menu-toggle");
+            const mobileNav = document.querySelector(".mobile-nav");
+
+            menuToggle.addEventListener("click", () => {
+                mobileNav.classList.toggle("active");
+            });
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -150,6 +181,17 @@
             <a href="#worship">Worship</a>
             <a href="#contact">Contact</a>
         </nav>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-nav">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#worship">Worship</a>
+            <a href="#contact">Contact</a>
+        </div>
     </header>
 
     <section id="about">
@@ -158,49 +200,30 @@
     </section>
 
     <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li><strong>Worship and Word of God:</strong> Every Sunday, 14:00 - 17:00</li>
-            <li><strong>Prayer Time:</strong> Every Wednesday, 17:30 - 19:00</li>
-            <li><strong>Bible Study:</strong> Every Thursday, 18:00 - 21:00</li>
-            <li><strong>Night Prayer:</strong> Every Friday, 22:00 - 05:00</li>
-        </ul>
+        <h2>Services</h2>
+        <p>We offer a variety of services to support your spiritual journey, including Sunday worship, Bible study groups, youth programs, and counseling services. Whether you're new to our community or a long-time member, there's a place for everyone at Mahber Tensai Hiyaw Amlak.</p>
     </section>
 
     <section id="worship">
         <h2>Worship</h2>
-        <p class="description">Explore our worship gallery and experience the spiritual ambiance of our church community.</p>
-        <div class="worship-gallery">
-            <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church.jpg" alt="Church Image">
-            <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church2.jpg" alt="Church Image 2">
-            <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church3.jpg" alt="Church Image 3">
-        </div>
+        <p>Explore our worship gallery and experience the spiritual ambiance of our church community.</p>
+        <img src="church.jpg" alt="Church Image" style="width:100%; border-radius:10px;">
     </section>
 
     <section id="contact">
-        <h2>Contact Us</h2>
-        <div class="contact-info">
-            <img src="https://img.icons8.com/ios-filled/50/000000/phone.png" alt="Phone Icon">
-            <p><strong>Phone:</strong> +41 76 683 5526 (Biniam)</p>
-        </div>
-        <div class="contact-info">
-            <img src="https://img.icons8.com/ios-filled/50/000000/email.png" alt="Email Icon">
-            <p><strong>Email:</strong> <a href="mailto:tsehaye.amanuel@gmx.ch">tsehaye.amanuel@gmx.ch</a></p>
-        </div>
-        <div class="contact-info">
-            <img src="https://img.icons8.com/ios-filled/50/000000/map-marker.png" alt="Location Icon">
-            <p><strong>Address:</strong> Hirzenbachstrasse 102, 8051 Zürich</p>
-        </div>
+        <h2>Contact</h2>
+        <p>Email: contact@mahberthiyawamlak.ch</p>
+        <p>Phone: +41 123 456 789</p>
+        <p>Address: Mahber Tensai Hiyaw Amlak Church, Zürich, Switzerland.</p>
     </section>
 
-   <footer>
-    <p style="color: #E6E6E6;">&copy; 2025 Mahber Tensai Hiyaw Amlak | Zürich, Switzerland.</p>
-    <div class="social-icons">
-        <a href="https://www.facebook.com/nehemia.gebre/about_contact_and_basic_info" target="_blank" style="color: #fff;">Facebook</a>
-        <a href="https://www.youtube.com/@MahberTensaiHeyawAmlakZurich" target="_blank" style="color: #fff;">YouTube</a>
-        <a href="https://www.instagram.com/mtha.church_zurich/" target="_blank" style="color: #fff;">Instagram</a>
-    </div>
-</footer>
-
+    <footer>
+        <p>&copy; 2025 Mahber Tensai Hiyaw Amlak | Zürich, Switzerland.</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/nehemia.gebre/about_contact_and_basic_info" target="_blank">Facebook</a>
+            <a href="https://www.youtube.com/@MahberTensaiHeyawAmlakZurich" target="_blank">YouTube</a>
+            <a href="https://www.instagram.com/mtha.church_zurich/" target="_blank">Instagram</a>
+        </div>
+    </footer>
 </body>
 </html>
