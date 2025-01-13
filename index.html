@@ -106,16 +106,6 @@
             .mobile-nav.active {
                 display: flex;
             }
-            #contact {
-                padding: 20px 10px;
-            }
-            #contact .contact-item {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            #contact .contact-item p {
-                margin-left: 0;
-            }
         }
 
         /* Section Styling */
@@ -138,6 +128,30 @@
             font-size: 1.1em;
             text-align: justify;
             color: #555;
+        }
+
+        /* Worship Section */
+        #worship .description {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #555;
+        }
+        #worship .worship-gallery {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }
+        #worship img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s ease;
+        }
+        #worship img:hover {
+            transform: scale(1.1);
         }
 
         /* Contact Section */
@@ -242,8 +256,12 @@
 
     <section id="worship">
         <h2>Worship</h2>
-        <p>Explore our worship gallery and experience the spiritual ambiance of our church community.</p>
-        <img src="church.jpg" alt="Church Image" style="width:100%; border-radius:10px;">
+        <p class="description">Explore our worship gallery and experience the spiritual ambiance of our church community.</p>
+        <div class="worship-gallery">
+            <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church.jpg" alt="Church Image">
+            <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church2.jpg" alt="Church Image 2">
+            <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church3.jpg" alt="Church Image 3">
+        </div>
     </section>
 
     <section id="contact">
