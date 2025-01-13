@@ -15,29 +15,29 @@
             line-height: 1.8;
             background-color: #F0F8FF;
             color: #333;
-            overflow-x: hidden;
         }
 
         /* Header Section */
         header {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             background-color: #B5E2FA;
             color: #fff;
-            padding: 10px 20px;
+            padding: 20px 40px;
             text-align: center;
-            position: relative;
         }
         header img {
-            width: 80px;
+            width: 120px;
             height: auto;
-            margin-right: 10px;
+            margin-right: 20px;
         }
         header h1 {
             margin: 0;
-            font-size: 1.5em;
+            font-size: 1.8em;
             font-weight: bold;
+            text-align: center;
+            flex-grow: 1;
         }
 
         /* Navigation Bar */
@@ -112,19 +112,19 @@
             .menu-toggle {
                 display: flex;
             }
+            header h1 {
+                font-size: 1.5em; /* Smaller title for mobile */
+            }
         }
 
         /* Section Styling */
         section {
             padding: 50px 20px;
-            margin: 40px auto;
+            margin: 20px auto;
             border-radius: 8px;
             background: #ffffff;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             max-width: 900px;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 0.8s forwards ease-out;
         }
         h2 {
             color: #005bb5;
@@ -134,15 +134,30 @@
             font-weight: bold;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Worship Section */
+        #worship {
+            padding: 50px 20px;
+            background: #ffffff;
+            overflow: hidden;
+        }
+        #worship h2 {
+            margin-bottom: 20px;
+        }
+        #worship .worship-gallery {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }
+        #worship img {
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.5s ease;
+        }
+        #worship img:hover {
+            transform: scale(1.1);
         }
 
         /* Footer */
@@ -188,7 +203,7 @@
 </head>
 <body>
     <header>
-        <img src="Image.png" alt="Logo">
+        <img src="Image.png" alt="Mahber Tensai Hiyaw Amlak Logo">
         <h1 id="header-title">Tensai Hiyaw Amlak</h1>
     </header>
     <nav>
@@ -198,37 +213,60 @@
             <div></div>
         </div>
         <div class="menu">
-            <a href="#" id="nav-home">Home</a>
             <a href="#about" id="nav-about">About</a>
             <a href="#services" id="nav-services">Services</a>
             <a href="#worship" id="nav-worship">Worship</a>
             <a href="#contact" id="nav-contact">Contact</a>
         </div>
+        <select id="languageSelector" onchange="changeLanguage()">
+            <option value="en">English</option>
+            <option value="de">Deutsch</option>
+        </select>
     </nav>
     <section id="about">
-        <h2>About Us</h2>
-        <p>Tensai Hiyaw Amlak is a vibrant and welcoming Eritrean church community located in the heart of Zürich, Switzerland. Rooted in the Holy Trinity, we are dedicated to nurturing spiritual growth and guiding everyone to focus on Jesus Christ as our Savior.</p>
+        <h2 id="about-title">About Us</h2>
+        <p id="about-content">Tensai Hiyaw Amlak is a vibrant and welcoming Eritrean church community located in the heart of Zürich, Switzerland. Rooted in the Holy Trinity and with Jesus Christ as our Lord and Savior, we are dedicated to nurturing spiritual growth, fostering a sense of togetherness among our members, and guiding everyone to focus on Him.</p>
     </section>
     <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li>Worship: Every Sunday, 14:00 - 17:00</li>
-            <li>Prayer Time: Every Wednesday, 17:30 - 19:00</li>
-            <li>Bible Study: Every Thursday, 18:00 - 21:00</li>
-            <li>Night Prayer: Every Friday, 22:00 - 05:00</li>
+        <h2 id="services-title">Our Services</h2>
+        <ul id="services-list">
+            <li><strong>Worship and Word of God:</strong> Every Sunday, 14:00 - 17:00</li>
+            <li><strong>Prayer Time:</strong> Every Wednesday, 17:30 - 19:00</li>
+            <li><strong>Bible Study:</strong> Every Thursday, 18:00 - 21:00</li>
+            <li><strong>Night Prayer:</strong> Every Friday, 22:00 - 05:00</li>
         </ul>
     </section>
     <section id="worship">
         <h2>Worship</h2>
-        <p>Explore our gallery of worship moments.</p>
+        <div class="worship-gallery">
+            <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church.jpg" alt="Church Image 1">
+            <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church2.jpg" alt="Church Image 2">
+            <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church3.jpg" alt="Church Image 3">
+        </div>
     </section>
     <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: <a href="mailto:tsehaye.amanuel@gmx.ch">tsehaye.amanuel@gmx.ch</a></p>
-        <p>Phone: +41 76 683 5526</p>
+        <h2 id="contact-title">Contact Us</h2>
+        <p id="contact-address">
+            <img src="address-icon.png" alt="Address Icon" style="width: 20px; vertical-align: middle; margin-right: 10px;">
+            <strong>Address:</strong> Hirzenbachstrasse 102, 8051 Zürich
+        </p>
+        <p id="contact-email">
+            <img src="email-icon.png" alt="Email Icon" style="width: 20px; vertical-align: middle; margin-right: 10px;">
+            <strong>Email:</strong> <a href="mailto:tsehaye.amanuel@gmx.ch">tsehaye.amanuel@gmx.ch</a>
+        </p>
+        <p id="contact-phone">
+            <img src="phone-icon.png" alt="Phone Icon" style="width: 20px; vertical-align: middle; margin-right: 10px;">
+            <strong>Phone:</strong> +41 76 683 5526 (Biniam)
+        </p>
     </section>
+
     <footer>
-        <p>&copy; 2025 Tensai Hiyaw Amlak | Zürich, Switzerland.</p>
+        <p>&copy; 2025 Mahber Tensai Hiyaw Amlak | Zürich, Switzerland.</p>
+        <p>
+            <a href="https://www.facebook.com/nehemia.gebre/about_contact_and_basic_info" target="_blank">Facebook</a> |
+            <a href="https://www.youtube.com/@MahberTensaiHeyawAmlakZurich" target="_blank">YouTube</a> |
+            <a href="https://www.instagram.com/mtha.church_zurich/" target="_blank">Instagram</a>
+        </p>
     </footer>
     <a href="#top" class="back-to-top">Back to Top</a>
 
@@ -238,22 +276,45 @@
             menu.classList.toggle('active');
         }
 
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            });
-        });
-
-        window.addEventListener('scroll', () => {
-            const backToTop = document.querySelector('.back-to-top');
-            if (window.scrollY > 200) {
-                backToTop.style.display = 'block';
-            } else {
-                backToTop.style.display = 'none';
+        const translations = {
+            en: {
+                headerTitle: "Tensai Hiyaw Amlak",
+                navAbout: "About",
+                navServices: "Services",
+                navWorship: "Worship",
+                navContact: "Contact",
+                aboutTitle: "About Us",
+                aboutContent: "Tensai Hiyaw Amlak is a vibrant and welcoming Eritrean church community located in the heart of Zürich, Switzerland. Rooted in the Holy Trinity and with Jesus Christ as our Lord and Savior, we are dedicated to nurturing spiritual growth, fostering a sense of togetherness among our members, and guiding everyone to focus on Him.",
+                servicesTitle: "Our Services",
+                contactTitle: "Contact Us",
+            },
+            de: {
+                headerTitle: "Tensai Hiyaw Amlak",
+                navAbout: "Über uns",
+                navServices: "Dienstleistungen",
+                navWorship: "Anbetung",
+                navContact: "Kontakt",
+                aboutTitle: "Über uns",
+                aboutContent: "Tensai Hiyaw Amlak ist eine lebendige und einladende eritreische Kirchengemeinschaft im Herzen von Zürich, Schweiz. Wir sind der spirituellen Entwicklung und der Förderung des Gemeinschaftsgefühls unter unseren Mitgliedern verpflichtet.",
+                servicesTitle: "Unsere Dienstleistungen",
+                contactTitle: "Kontaktieren Sie uns",
             }
-        });
+        };
+
+        function changeLanguage() {
+            const selectedLanguage = document.getElementById('languageSelector').value;
+            const lang = translations[selectedLanguage];
+
+            document.getElementById('header-title').textContent = lang.headerTitle;
+            document.getElementById('nav-about').textContent = lang.navAbout;
+            document.getElementById('nav-services').textContent = lang.navServices;
+            document.getElementById('nav-worship').textContent = lang.navWorship;
+            document.getElementById('nav-contact').textContent = lang.navContact;
+            document.getElementById('about-title').textContent = lang.aboutTitle;
+            document.getElementById('about-content').textContent = lang.aboutContent;
+            document.getElementById('services-title').textContent = lang.servicesTitle;
+            document.getElementById('contact-title').textContent = lang.contactTitle;
+        }
     </script>
 </body>
 </html>
