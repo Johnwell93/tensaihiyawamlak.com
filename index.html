@@ -55,13 +55,6 @@
             color: #005bb5;
         }
 
-        /* Center Navigation */
-        .center-nav {
-            display: flex;
-            justify-content: center;
-            flex: 1;
-        }
-
         /* Section Styling */
         section {
             padding: 50px 20px;
@@ -83,12 +76,15 @@
         #worship {
             padding: 50px 20px;
             background: #ffffff;
-            overflow: hidden;
         }
-        #worship p {
-            text-align: center;
-            font-size: 1.2em;
+        #worship h2 {
             margin-bottom: 20px;
+        }
+        #worship .description {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #555;
         }
         #worship .worship-gallery {
             display: flex;
@@ -107,36 +103,39 @@
             transform: scale(1.1);
         }
 
-        /* Contact Section */
-        #contact {
-            text-align: center;
-        }
-        #contact p {
-            font-size: 1.1em;
-            margin-bottom: 10px;
-        }
-
-        /* Footer */
+        /* Footer Section */
         footer {
             background: #005bb5;
             color: #fff;
             text-align: center;
-            padding: 20px 0;
+            padding: 30px 20px;
             margin-top: 40px;
-            font-size: 1em;
         }
-        footer a {
-            color: #ffdd57;
-            text-decoration: none;
-            margin: 0 10px;
+        footer .social-icons {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
         }
-        footer a:hover {
-            text-decoration: underline;
+        footer .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.3s;
         }
-
-        /* Smooth Scrolling */
-        html {
-            scroll-behavior: smooth;
+        footer .social-icons a:hover {
+            background-color: #ffdd57;
+            transform: scale(1.1);
+        }
+        footer .social-icons a img {
+            width: 20px;
+            height: 20px;
         }
     </style>
 </head>
@@ -146,43 +145,37 @@
             <img src="Image.png" alt="Mahber Tensai Hiyaw Amlak Logo">
             <h1>Tensai Hiyaw Amlak</h1>
         </div>
-        <nav class="center-nav">
+        <nav>
             <a href="#about">About</a>
             <a href="#services">Services</a>
             <a href="#worship">Worship</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
-    <section id="about">
-        <h2>About Us</h2>
-        <p>Tensai Hiyaw Amlak is a vibrant and welcoming Eritrean church community located in the heart of Zürich, Switzerland. Rooted in the Holy Trinity and with Jesus Christ as our Lord and Savior, we are dedicated to nurturing spiritual growth, fostering a sense of togetherness among our members, and guiding everyone to focus on Him.</p>
-    </section>
-    <section id="services">
-        <h2>Our Services</h2>
-        <ul>
-            <li><strong>Worship and Word of God:</strong> Every Sunday, 14:00 - 17:00</li>
-            <li><strong>Prayer Time:</strong> Every Wednesday, 17:30 - 19:00</li>
-            <li><strong>Bible Study:</strong> Every Thursday, 18:00 - 21:00</li>
-            <li><strong>Night Prayer:</strong> Every Friday, 22:00 - 05:00</li>
-        </ul>
-    </section>
+
     <section id="worship">
         <h2>Worship</h2>
-        <p>Join us in heartfelt worship as we glorify God through songs, prayers, and fellowship. Everyone is welcome!</p>
+        <p class="description">Explore our worship gallery and experience the spiritual ambiance of our church community.</p>
         <div class="worship-gallery">
-            <img src="church1.jpg" alt="Church Image 1">
-            <img src="church2.jpg" alt="Church Image 2">
-            <img src="church3.jpg" alt="Church Image 3">
+            <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church.jpg" alt="Church Image">
+            <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church2.jpg" alt="Church Image 2">
+            <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church3.jpg" alt="Church Image 3">
         </div>
     </section>
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Email: info@tensai.org</p>
-        <p>Phone: +41 79 123 4567</p>
-        <p>Address: Bahnhofstrasse 10, 8001 Zürich, Switzerland</p>
-    </section>
+
     <footer>
-        <p>&copy; 2025 Mahber Tensai Hiyaw Amlak | Zürich, Switzerland</p>
+        <p>&copy; 2025 Mahber Tensai Hiyaw Amlak | Zürich, Switzerland.</p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/nehemia.gebre/about_contact_and_basic_info" target="_blank">
+                <img src="facebook-icon.png" alt="Facebook">
+            </a>
+            <a href="https://www.youtube.com/@MahberTensaiHeyawAmlakZurich" target="_blank">
+                <img src="youtube-icon.png" alt="YouTube">
+            </a>
+            <a href="https://www.instagram.com/mtha.church_zurich/" target="_blank">
+                <img src="instagram-icon.png" alt="Instagram">
+            </a>
+        </div>
     </footer>
 </body>
 </html>
