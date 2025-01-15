@@ -92,7 +92,6 @@
             margin: 4px 0;
             transition: all 0.3s ease;
         }
-
         .menu {
             display: flex;
         }
@@ -101,20 +100,23 @@
             .menu {
                 display: none;
                 flex-direction: column;
-                background: #005bb5;
+                background-color: #005bb5;
                 width: 100%;
                 position: absolute;
-                top: 60px;
+                top: 100%;
                 left: 0;
+                z-index: 999;
+                text-align: center;
             }
             .menu.active {
                 display: flex;
             }
+            .menu a {
+                padding: 15px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            }
             .menu-toggle {
                 display: flex;
-            }
-            header h1 {
-                font-size: 1.5em;
             }
         }
 
@@ -145,9 +147,9 @@
             margin-bottom: 20px;
         }
         #worship p {
-            text-align: center;
             font-size: 1.2em;
             margin-bottom: 30px;
+            text-align: center;
             color: #333;
         }
         #worship .worship-gallery {
@@ -167,48 +169,6 @@
             transform: scale(1.1);
         }
 
-        /* Contact Form Styling */
-        #contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            max-width: 600px;
-            margin: 20px auto;
-        }
-        #contact-form label {
-            font-size: 1em;
-            font-weight: 600;
-            color: #005bb5;
-        }
-        #contact-form input, #contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1em;
-        }
-        #contact-form input:focus, #contact-form textarea:focus {
-            outline: none;
-            border-color: #005bb5;
-            box-shadow: 0 0 5px rgba(0, 91, 181, 0.5);
-        }
-        #contact-form textarea {
-            resize: vertical;
-        }
-        #contact-form input[type="submit"] {
-            background: #005bb5;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1em;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-        #contact-form input[type="submit"]:hover {
-            background: #003d80;
-        }
-
         /* Footer */
         footer {
             background: #005bb5;
@@ -225,28 +185,6 @@
         }
         footer a:hover {
             text-decoration: underline;
-        }
-
-        /* Back-to-Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #0073e6;
-            color: #fff;
-            padding: 10px 15px;
-            border-radius: 50px;
-            text-decoration: none;
-            display: none;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-        .back-to-top:hover {
-            background: #005bb5;
-        }
-
-        /* Smooth Scrolling */
-        html {
-            scroll-behavior: smooth;
         }
     </style>
 </head>
@@ -272,63 +210,43 @@
             <option value="de">Deutsch</option>
         </select>
     </nav>
+
     <section id="about">
-        <h2 id="about-title">About Us</h2>
-        <p id="about-content">Tensai Hiyaw Amlak is a vibrant and welcoming Eritrean church community located in the heart of Zürich, Switzerland. Rooted in the Holy Trinity and with Jesus Christ as our Lord and Savior, we are dedicated to nurturing spiritual growth, fostering a sense of togetherness among our members, and guiding everyone to focus on Him.</p>
+        <h2>About Us</h2>
+        <p>Welcome to Mahber Tensai Hiyaw Amlak, a community of faith and worship in Zürich, Switzerland. Join us in spreading love, peace, and hope.</p>
     </section>
+
     <section id="services">
-        <h2 id="services-title">Our Services</h2>
-        <ul id="services-list">
-            <li><strong>Worship and Word of God:</strong> Every Sunday, 14:00 - 17:00</li>
-            <li><strong>Prayer Time:</strong> Every Wednesday, 17:30 - 19:00</li>
-            <li><strong>Bible Study:</strong> Every Thursday, 18:00 - 21:00</li>
-            <li><strong>Night Prayer:</strong> Every Friday, 22:00 - 05:00</li>
-        </ul>
+        <h2>Services</h2>
+        <p>We provide spiritual guidance, community events, and opportunities for worship and fellowship.</p>
     </section>
+
     <section id="worship">
         <h2>Worship</h2>
-        <p>Experience the joy and peace of worship at our vibrant community gatherings. Join us to celebrate faith through prayer, music, and fellowship.</p>
+        <p>Join us to worship together, celebrate our faith, and share in the love of God through prayer, song, and fellowship.</p>
         <div class="worship-gallery">
             <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church.jpg" alt="Church Image 1">
             <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church2.jpg" alt="Church Image 2">
             <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church3.jpg" alt="Church Image 3">
         </div>
     </section>
+
     <section id="contact">
-        <h2 id="contact-title">Contact Us</h2>
-        <p id="contact-address">
-            <img src="address-icon.png" alt="Address Icon" style="width: 20px; vertical-align: middle; margin-right: 10px;">
-            <strong>Address:</strong> Hirzenbachstrasse 102, 8051 Zürich
-        </p>
-        <p id="contact-email">
-            <img src="email-icon.png" alt="Email Icon" style="width: 20px; vertical-align: middle; margin-right: 10px;">
-            <strong>Email:</strong> <a href="mailto:tsehaye.amanuel@gmx.ch">tsehaye.amanuel@gmx.ch</a>, <a href="mailto:tha.zurichchurch@gmail.com">tha.zurichchurch@gmail.com</a>
-        </p>
-        <p id="contact-phone">
-            <img src="phone-icon.png" alt="Phone Icon" style="width: 20px; vertical-align: middle; margin-right: 10px;">
-            <strong>Phone:</strong> +41 76 683 5526 (Biniam)
-        </p>
-        <form id="contact-form" action="#" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="subject">Subject:</label>
-            <input type="text" id="subject" name="subject" required>
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-            <input type="submit" value="Submit">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="5" required></textarea><br><br>
+            <button type="submit">Send Message</button>
         </form>
     </section>
+
     <footer>
         <p>&copy; 2025 Mahber Tensai Hiyaw Amlak | Zürich, Switzerland.</p>
-        <p>
-            <a href="https://www.facebook.com/nehemia.gebre/about_contact_and_basic_info" target="_blank">Facebook</a> |
-            <a href="https://www.youtube.com/@MahberTensaiHeyawAmlakZurich" target="_blank">YouTube</a> |
-            <a href="https://www.instagram.com/mtha.church_zurich/" target="_blank">Instagram</a>
-        </p>
     </footer>
-    <a href="#top" class="back-to-top">Back to Top</a>
 
     <script>
         function toggleMenu() {
@@ -336,23 +254,12 @@
             menu.classList.toggle('active');
         }
 
-        const translations = {
-            en: {
-                headerTitle: "Tensai Hiyaw Amlak",
-                navAbout: "About",
-                navServices: "Services",
-                navWorship: "Worship",
-                navContact: "Contact",
-                aboutTitle: "About Us",
-                aboutContent: "Tensai Hiyaw Amlak is a vibrant and welcoming Eritrean church community located in the heart of Zürich, Switzerland. Rooted in the Holy Trinity and with Jesus Christ as our Lord and Savior, we are dedicated to nurturing spiritual growth, fostering a sense of togetherness among our members, and guiding everyone to focus on Him.",
-                servicesTitle: "Our Services",
-                contactTitle: "Contact Us",
-            },
-            de: {
-                headerTitle: "Tensai Hiyaw Amlak",
-                navAbout: "\u00dcber uns",
-                navServices: "Dienstleistungen",
-                navWorship: "Anbetung",
-                navContact: "Kontakt",
-                aboutTitle: "\u00dcber uns",
-                aboutContent: "Tensai
+        document.querySelectorAll('.menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                const menu = document.querySelector('.menu');
+                menu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
