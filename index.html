@@ -23,7 +23,7 @@
             align-items: center;
             justify-content: center;
             background-color: #B5E2FA;
-            color: #fff;
+            color: #005bb5; /* Change color to match sections */
             padding: 20px 40px;
             text-align: center;
         }
@@ -38,6 +38,8 @@
             font-weight: bold;
             text-align: center;
             flex-grow: 1;
+            color: #005bb5; /* Same color as section titles */
+            font-family: 'Poppins', Arial, sans-serif;
         }
 
         /* Navigation Bar */
@@ -252,12 +254,24 @@
         </p>
         <p id="contact-email">
             <img src="email-icon.png" alt="Email Icon" style="width: 20px; vertical-align: middle; margin-right: 10px;">
-            <strong>Email:</strong> <a href="mailto:tsehaye.amanuel@gmx.ch">tsehaye.amanuel@gmx.ch</a>
+            <strong>Email:</strong> <a href="mailto:tsehaye.amanuel@gmx.ch">tsehaye.amanuel@gmx.ch</a>, <a href="mailto:tha.zurichchurch@gmail.com">tha.zurichchurch@gmail.com</a>
         </p>
         <p id="contact-phone">
             <img src="phone-icon.png" alt="Phone Icon" style="width: 20px; vertical-align: middle; margin-right: 10px;">
             <strong>Phone:</strong> +41 76 683 5526 (Biniam)
         </p>
+        <form id="contact-form" action="#" method="post">
+            <h2>Contact Form</h2>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <label for="subject">Subject:</label><br>
+            <input type="text" id="subject" name="subject" required><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="5" required></textarea><br>
+            <input type="submit" value="Submit">
+        </form>
     </section>
 
     <footer>
