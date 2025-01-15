@@ -23,7 +23,7 @@
             align-items: center;
             justify-content: center;
             background-color: #B5E2FA;
-            color: #005bb5; /* Change color to match sections */
+            color: #005bb5;
             padding: 20px 40px;
             text-align: center;
         }
@@ -38,8 +38,7 @@
             font-weight: bold;
             text-align: center;
             flex-grow: 1;
-            color: #005bb5; /* Same color as section titles */
-            font-family: 'Poppins', Arial, sans-serif;
+            color: #005bb5;
         }
 
         /* Navigation Bar */
@@ -115,7 +114,7 @@
                 display: flex;
             }
             header h1 {
-                font-size: 1.5em; /* Smaller title for mobile */
+                font-size: 1.5em;
             }
         }
 
@@ -145,6 +144,12 @@
         #worship h2 {
             margin-bottom: 20px;
         }
+        #worship p {
+            text-align: center;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #333;
+        }
         #worship .worship-gallery {
             display: flex;
             gap: 20px;
@@ -160,6 +165,48 @@
         }
         #worship img:hover {
             transform: scale(1.1);
+        }
+
+        /* Contact Form Styling */
+        #contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+        #contact-form label {
+            font-size: 1em;
+            font-weight: 600;
+            color: #005bb5;
+        }
+        #contact-form input, #contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        #contact-form input:focus, #contact-form textarea:focus {
+            outline: none;
+            border-color: #005bb5;
+            box-shadow: 0 0 5px rgba(0, 91, 181, 0.5);
+        }
+        #contact-form textarea {
+            resize: vertical;
+        }
+        #contact-form input[type="submit"] {
+            background: #005bb5;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        #contact-form input[type="submit"]:hover {
+            background: #003d80;
         }
 
         /* Footer */
@@ -240,6 +287,7 @@
     </section>
     <section id="worship">
         <h2>Worship</h2>
+        <p>Experience the joy and peace of worship at our vibrant community gatherings. Join us to celebrate faith through prayer, music, and fellowship.</p>
         <div class="worship-gallery">
             <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church.jpg" alt="Church Image 1">
             <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church2.jpg" alt="Church Image 2">
@@ -261,19 +309,17 @@
             <strong>Phone:</strong> +41 76 683 5526 (Biniam)
         </p>
         <form id="contact-form" action="#" method="post">
-            <h2>Contact Form</h2>
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" required><br>
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br>
-            <label for="subject">Subject:</label><br>
-            <input type="text" id="subject" name="subject" required><br>
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="5" required></textarea><br>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="subject">Subject:</label>
+            <input type="text" id="subject" name="subject" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
             <input type="submit" value="Submit">
         </form>
     </section>
-
     <footer>
         <p>&copy; 2025 Mahber Tensai Hiyaw Amlak | Zürich, Switzerland.</p>
         <p>
@@ -304,31 +350,9 @@
             },
             de: {
                 headerTitle: "Tensai Hiyaw Amlak",
-                navAbout: "Über uns",
+                navAbout: "\u00dcber uns",
                 navServices: "Dienstleistungen",
                 navWorship: "Anbetung",
                 navContact: "Kontakt",
-                aboutTitle: "Über uns",
-                aboutContent: "Tensai Hiyaw Amlak ist eine lebendige und einladende eritreische Kirchengemeinschaft im Herzen von Zürich, Schweiz. Wir sind der spirituellen Entwicklung und der Förderung des Gemeinschaftsgefühls unter unseren Mitgliedern verpflichtet.",
-                servicesTitle: "Unsere Dienstleistungen",
-                contactTitle: "Kontaktieren Sie uns",
-            }
-        };
-
-        function changeLanguage() {
-            const selectedLanguage = document.getElementById('languageSelector').value;
-            const lang = translations[selectedLanguage];
-
-            document.getElementById('header-title').textContent = lang.headerTitle;
-            document.getElementById('nav-about').textContent = lang.navAbout;
-            document.getElementById('nav-services').textContent = lang.navServices;
-            document.getElementById('nav-worship').textContent = lang.navWorship;
-            document.getElementById('nav-contact').textContent = lang.navContact;
-            document.getElementById('about-title').textContent = lang.aboutTitle;
-            document.getElementById('about-content').textContent = lang.aboutContent;
-            document.getElementById('services-title').textContent = lang.servicesTitle;
-            document.getElementById('contact-title').textContent = lang.contactTitle;
-        }
-    </script>
-</body>
-</html>
+                aboutTitle: "\u00dcber uns",
+                aboutContent: "Tensai
