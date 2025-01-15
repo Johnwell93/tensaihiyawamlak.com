@@ -23,7 +23,7 @@
             align-items: center;
             justify-content: center;
             background-color: #B5E2FA;
-            color: #fff;
+            color: #005bb5; /* Change color to match sections */
             padding: 20px 40px;
             text-align: center;
         }
@@ -39,6 +39,7 @@
             text-align: center;
             flex-grow: 1;
             color: #005bb5; /* Same color as section titles */
+            font-family: 'Poppins', Arial, sans-serif;
         }
 
         /* Navigation Bar */
@@ -226,20 +227,19 @@
     </nav>
     <section id="about">
         <h2 id="about-title">About Us</h2>
-        <p id="about-content">Tensai Hiyaw Amlak is a vibrant and welcoming Eritrean church community located in the heart of Zürich, Switzerland. Rooted in the Holy Trinity and with Jesus Christ as our Lord and Savior, we are dedicated to nurturing spiritual growth, fostering a sense of togetherness among our members, and guiding everyone to focus on Him. Our mission extends beyond the church walls, reaching out to support and uplift the wider community through various charitable and educational initiatives.</p>
+        <p id="about-content">Tensai Hiyaw Amlak is a vibrant and welcoming Eritrean church community located in the heart of Zürich, Switzerland. Rooted in the Holy Trinity and with Jesus Christ as our Lord and Savior, we are dedicated to nurturing spiritual growth, fostering a sense of togetherness among our members, and guiding everyone to focus on Him.</p>
     </section>
     <section id="services">
         <h2 id="services-title">Our Services</h2>
         <ul id="services-list">
-            <li><strong>Worship and Word of God:</strong> Every Sunday, 14:00 - 17:00. Our Sunday service is the cornerstone of our weekly gatherings, bringing the congregation together for worship, teachings, and community fellowship.</li>
-            <li><strong>Prayer Time:</strong> Every Wednesday, 17:30 - 19:00. Midweek prayers are a vital time for personal reflection and collective intercession, strengthening our connection with God and each other.</li>
-            <li><strong>Bible Study:</strong> Every Thursday, 18:00 - 21:00. Dive deep into the Scriptures with us every Thursday, where we explore the Word of God and its application in our daily lives through interactive sessions.</li>
-            <li><strong>Night Prayer:</strong> Every Friday, 22:00 - 05:00. Our Night Prayer sessions are a unique time of devotion, worship, and waiting on the Lord, fostering spiritual resilience and renewal.</li>
+            <li><strong>Worship and Word of God:</strong> Every Sunday, 14:00 - 17:00</li>
+            <li><strong>Prayer Time:</strong> Every Wednesday, 17:30 - 19:00</li>
+            <li><strong>Bible Study:</strong> Every Thursday, 18:00 - 21:00</li>
+            <li><strong>Night Prayer:</strong> Every Friday, 22:00 - 05:00</li>
         </ul>
     </section>
     <section id="worship">
         <h2>Worship</h2>
-        <p>Worship at Tensai Hiyaw Amlak is more than just a tradition; it's a heartfelt expression of our faith and love for God. Through songs, prayers, and communal acts of devotion, we aim to create a space where everyone can experience the presence of the Holy Spirit and deepen their spiritual journey. Our worship services are designed to uplift, inspire, and bring the congregation closer to God.</p>
         <div class="worship-gallery">
             <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church.jpg" alt="Church Image 1">
             <img src="https://raw.githubusercontent.com/Johnwell93/tensaihiyawamlak.com/main/church2.jpg" alt="Church Image 2">
@@ -260,8 +260,75 @@
             <img src="phone-icon.png" alt="Phone Icon" style="width: 20px; vertical-align: middle; margin-right: 10px;">
             <strong>Phone:</strong> +41 76 683 5526 (Biniam)
         </p>
-        <form id="contact-form" action="/submit" method="post" style="margin-top: 20px;">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required><br><br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="
+        <form id="contact-form" action="#" method="post">
+            <h2>Contact Form</h2>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <label for="subject">Subject:</label><br>
+            <input type="text" id="subject" name="subject" required><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="5" required></textarea><br>
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Mahber Tensai Hiyaw Amlak | Zürich, Switzerland.</p>
+        <p>
+            <a href="https://www.facebook.com/nehemia.gebre/about_contact_and_basic_info" target="_blank">Facebook</a> |
+            <a href="https://www.youtube.com/@MahberTensaiHeyawAmlakZurich" target="_blank">YouTube</a> |
+            <a href="https://www.instagram.com/mtha.church_zurich/" target="_blank">Instagram</a>
+        </p>
+    </footer>
+    <a href="#top" class="back-to-top">Back to Top</a>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+
+        const translations = {
+            en: {
+                headerTitle: "Tensai Hiyaw Amlak",
+                navAbout: "About",
+                navServices: "Services",
+                navWorship: "Worship",
+                navContact: "Contact",
+                aboutTitle: "About Us",
+                aboutContent: "Tensai Hiyaw Amlak is a vibrant and welcoming Eritrean church community located in the heart of Zürich, Switzerland. Rooted in the Holy Trinity and with Jesus Christ as our Lord and Savior, we are dedicated to nurturing spiritual growth, fostering a sense of togetherness among our members, and guiding everyone to focus on Him.",
+                servicesTitle: "Our Services",
+                contactTitle: "Contact Us",
+            },
+            de: {
+                headerTitle: "Tensai Hiyaw Amlak",
+                navAbout: "Über uns",
+                navServices: "Dienstleistungen",
+                navWorship: "Anbetung",
+                navContact: "Kontakt",
+                aboutTitle: "Über uns",
+                aboutContent: "Tensai Hiyaw Amlak ist eine lebendige und einladende eritreische Kirchengemeinschaft im Herzen von Zürich, Schweiz. Wir sind der spirituellen Entwicklung und der Förderung des Gemeinschaftsgefühls unter unseren Mitgliedern verpflichtet.",
+                servicesTitle: "Unsere Dienstleistungen",
+                contactTitle: "Kontaktieren Sie uns",
+            }
+        };
+
+        function changeLanguage() {
+            const selectedLanguage = document.getElementById('languageSelector').value;
+            const lang = translations[selectedLanguage];
+
+            document.getElementById('header-title').textContent = lang.headerTitle;
+            document.getElementById('nav-about').textContent = lang.navAbout;
+            document.getElementById('nav-services').textContent = lang.navServices;
+            document.getElementById('nav-worship').textContent = lang.navWorship;
+            document.getElementById('nav-contact').textContent = lang.navContact;
+            document.getElementById('about-title').textContent = lang.aboutTitle;
+            document.getElementById('about-content').textContent = lang.aboutContent;
+            document.getElementById('services-title').textContent = lang.servicesTitle;
+            document.getElementById('contact-title').textContent = lang.contactTitle;
+        }
+    </script>
+</body>
+</html>
